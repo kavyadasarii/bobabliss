@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html data-theme="light" dir="ltr" lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Order Now — BobaBliss Bubble Tea</title>
+<meta content="Order your bubble tea for pickup. Choose a drink, set sweetness, ice, milk and toppings, and we will have it fresh and ready." name="description"/>
+<link href="../home/favicon.svg" rel="icon" type="image/svg+xml"/>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@500;600&amp;family=Nunito:wght@400;600;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="../home/style.css" rel="stylesheet"/>
+<link href="order.css" rel="stylesheet"/>
+<script src="../home/script.js"></script>
+</head>
+<body>
+<svg aria-hidden="true" focusable="false" height="0" style="position:absolute" width="0"><symbol id="i-check" viewbox="0 0 24 24"><path d="M5 13l4 4L19 7"></path></symbol><symbol id="i-pin" viewbox="0 0 24 24"><path d="M12 21s7-6.2 7-11a7 7 0 10-14 0c0 4.8 7 11 7 11z"></path><circle cx="12" cy="10" r="2.5"></circle></symbol><symbol id="i-clock" viewbox="0 0 24 24"><circle cx="12" cy="12" r="9"></circle><path d="M12 7v5l3 2"></path></symbol><symbol id="i-cup" viewbox="0 0 24 24"><path d="M6 8h12l-1.4 12a2 2 0 01-2 1.8H9.4a2 2 0 01-2-1.8L6 8z"></path><path d="M13 2l2 5"></path></symbol></svg>
+<header class="od-top">
+<div class="od-top-in">
+<span class="od-top-sp" aria-hidden="true"></span>
+<a class="brand" href="../home/index.html"><span class="brand-logo"><img alt="BobaBliss logo" height="46" src="../home/logo.svg" width="46"/></span><span class="brand-text"><span class="logo-word">Boba<em>Bliss</em></span><br/><span class="brand-sub">Bubble Tea &amp; Boba Shop</span></span></a>
+<div class="nav-actions">
+<button aria-label="Toggle text direction" class="btn btn-outline btn-sm" id="dir-toggle">RTL</button>
+<button aria-label="Toggle dark mode" class="icon-btn" id="theme-toggle"><svg class="sun" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.7" viewbox="0 0 24 24"><circle cx="12" cy="12" r="4.2"></circle><path d="M12 3v2.2M12 18.8V21M21 12h-2.2M5.2 12H3M18.4 5.6l-1.5 1.5M7.1 16.9l-1.5 1.5M18.4 18.4l-1.5-1.5M7.1 7.1L5.6 5.6"></path></svg><svg class="moon" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.7" viewbox="0 0 24 24"><path d="M20 14.5A8.5 8.5 0 1 1 9.5 4a7 7 0 0 0 10.5 10.5z"></path></svg></button>
+</div>
+</div>
+</header>
+
+<main class="od-page">
+<div class="wrap od-body">
+<div class="od-layout" id="od-layout">
+
+<form class="od-steps" id="od-form" novalidate>
+
+  
+  <fieldset class="od-card">
+    <legend><span class="od-num">1</span>Choose your drink</legend>
+
+    <div class="od-field">
+      <label class="od-label" for="od-drink">Drink</label>
+      <select class="od-input" id="od-drink"></select>
+    </div>
+
+    <div class="od-pick" aria-live="polite">
+      <img alt="" id="od-img" src=""/>
+      <div><h3 id="od-name"></h3><p id="od-desc"></p></div>
+    </div>
+
+    <div class="od-field">
+      <span class="od-label">Size</span>
+      <div class="od-pills" id="od-size"></div>
+    </div>
+    <div class="od-field">
+      <span class="od-label">Sweetness</span>
+      <div class="od-pills" id="od-sweet"></div>
+    </div>
+    <div class="od-row">
+      <div class="od-field">
+        <span class="od-label">Ice</span>
+        <div class="od-pills" id="od-ice"></div>
+      </div>
+      <div class="od-field">
+        <label class="od-label" for="od-milk">Milk</label>
+        <select class="od-input" id="od-milk"></select>
+      </div>
+    </div>
+    <div class="od-field">
+      <span class="od-label">Toppings <small>(optional, per topping)</small></span>
+      <div id="od-tops"></div>
+    </div>
+
+    <div class="od-addbar">
+      <div class="od-qty" role="group" aria-label="Quantity">
+        <button type="button" id="od-minus" aria-label="Decrease quantity">−</button>
+        <output id="od-qty" aria-live="polite">1</output>
+        <button type="button" id="od-plus" aria-label="Increase quantity">+</button>
+      </div>
+      <div class="od-linetotal"><small>This drink</small><span id="od-line">₹0</span></div>
+      <button class="btn btn-primary od-add" id="od-add" type="button">Add to order</button>
+    </div>
+  </fieldset>
+
+  
+  <fieldset class="od-card">
+    <legend><span class="od-num">2</span>Pickup details</legend>
+
+    <div class="od-store"><svg class="i" viewbox="0 0 24 24"><use href="#i-pin"></use></svg><div><b>BobaBliss, 123 Pearl Street</b><span>Daily 11:00 – 22:00. Pickup at the counter.</span></div></div>
+
+    <div class="od-row">
+      <div class="od-field">
+        <label class="od-label" for="od-nm">Your name</label>
+        <input class="od-input" id="od-nm" autocomplete="name" placeholder="e.g. Aanya" required/>
+        <div class="od-err" id="od-nm-e"></div>
+      </div>
+      <div class="od-field">
+        <label class="od-label" for="od-ph">Phone number</label>
+        <input class="od-input" id="od-ph" type="tel" inputmode="tel" autocomplete="tel" placeholder="e.g. 98765 43210" required/>
+        <div class="od-err" id="od-ph-e"></div>
+      </div>
+    </div>
+
+    <div class="od-choices" role="radiogroup" aria-label="Pickup time">
+      <label class="od-choice"><input type="radio" name="when" value="asap" checked/><span><b>As soon as possible</b><small>Ready in about 15 minutes</small></span></label>
+      <label class="od-choice"><input type="radio" name="when" value="later"/><span><b>Schedule for later</b><small>Pick a date and time</small></span></label>
+    </div>
+    <div class="od-row" id="od-later" hidden>
+      <div class="od-field">
+        <label class="od-label" for="od-date">Date</label>
+        <input class="od-input" id="od-date" type="date"/>
+      </div>
+      <div class="od-field">
+        <label class="od-label" for="od-time">Time <small>(11:00 – 21:30)</small></label>
+        <input class="od-input" id="od-time" type="time" min="11:00" max="21:30" step="900"/>
+        <div class="od-err" id="od-time-e"></div>
+      </div>
+    </div>
+
+    <div class="od-field">
+      <label class="od-label" for="od-note">Notes or allergies <small>(optional)</small></label>
+      <textarea class="od-input" id="od-note" placeholder="Tell us about any allergies or special requests"></textarea>
+    </div>
+  </fieldset>
+
+  
+  <fieldset class="od-card">
+    <legend><span class="od-num">3</span>Payment</legend>
+    <div class="od-choices" role="radiogroup" aria-label="Payment method" style="margin-bottom:0">
+      <label class="od-choice"><input type="radio" name="pay" value="Pay at the store" checked/><span><b>Pay at the store</b><small>Cash, card or UPI when you collect</small></span></label>
+      <label class="od-choice"><input type="radio" name="pay" value="UPI link by SMS"/><span><b>Pay by UPI</b><small>We will text you a payment link</small></span></label>
+    </div>
+  </fieldset>
+</form>
+
+<aside class="od-summary" aria-label="Order summary">
+  <h2>Your order <small id="od-count">0 items</small></h2>
+  <div class="od-empty" id="od-none">Your cart is empty. Pick a drink and tap <b>Add to order</b>.</div>
+  <div class="od-items" id="od-items" hidden></div>
+  <div class="od-totals" id="od-totals" hidden>
+    <div><span>Subtotal</span><span id="od-sub">₹0</span></div>
+    <div class="grand"><span>Total</span><span id="od-tot">₹0</span></div>
+  </div>
+  <p class="od-formerr" id="od-formerr" role="alert" hidden></p>
+  <button class="btn btn-primary od-place" id="od-place" type="submit" form="od-form" disabled>Place order</button>
+  <p class="od-hint">Prices in ₹. Allergies? Please add a note above.</p>
+</aside>
+
+</div>
+
+
+<section class="od-done" id="od-done" hidden aria-live="polite">
+  <div class="od-tick"><svg class="i" viewbox="0 0 24 24"><use href="#i-check"></use></svg></div>
+  <h2>Thank you, <span id="d-name"></span>!</h2>
+  <p>Your order is in. We are shaking it up and will have it ready at the counter.</p>
+  <div class="od-code" id="d-code"></div>
+  <div class="od-recap">
+    <div class="od-items" id="d-items" style="max-height:none"></div>
+    <dl>
+      <dt>Total</dt><dd id="d-total"></dd>
+      <dt>Pickup</dt><dd id="d-when"></dd>
+      <dt>Payment</dt><dd id="d-pay"></dd>
+      <dt>Store</dt><dd>123 Pearl Street, Your City</dd>
+    </dl>
+  </div>
+  <div class="od-done-acts">
+    <button class="btn btn-primary" id="d-new" type="button">Place another order</button>
+    <a class="btn btn-outline" href="../menu/menu.html">Back to the menu</a>
+  </div>
+</section>
+</div>
+</main>
+
+
+
+<script src="order.js">
+</script>
+</body>
+</html>
