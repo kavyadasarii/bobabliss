@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" data-theme="light">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Customize Your Drink — BobaBliss</title>
+<meta name="description" content="Build your own bubble tea. Choose your tea, flavour, milk, sweetness, ice and toppings and see your drink and price update live.">
+<link rel="icon" type="image/svg+xml" href="../home/favicon.svg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@500;600&family=Nunito:wght@400;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../home/style.css">
+<link rel="stylesheet" href="customize.css">
+<script src="../home/script.js"></script>
+</head>
+<body>
+<svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false"><symbol id="logo" viewBox="0 0 64 64"><path d="M37 6l-4.5 16" stroke="#FF6F91" stroke-width="5" stroke-linecap="round" fill="none"/><path d="M15 28c0-10 7-13.5 17-13.5S49 18 49 28z" fill="#fff" fill-opacity=".92"/><path d="M16 28h32l-3.9 27a2.8 2.8 0 0 1-2.8 2.4H22.7a2.8 2.8 0 0 1-2.8-2.4z" fill="#fff"/><path d="M17.6 36h28.8l-2.3 19a2.8 2.8 0 0 1-2.8 2.4H22.7a2.8 2.8 0 0 1-2.8-2.4z" fill="#D9C9FF"/><g fill="#4A2BB0"><circle cx="26.5" cy="51.5" r="3"/><circle cx="33.5" cy="52.5" r="3"/><circle cx="40" cy="51" r="3"/><circle cx="29.5" cy="45.5" r="3"/><circle cx="37" cy="45" r="3"/></g></symbol><symbol id="i-check" viewBox="0 0 24 24"><path d="M5 13l4 4L19 7"/></symbol><symbol id="i-pin" viewBox="0 0 24 24"><path d="M12 21s7-6.2 7-11a7 7 0 10-14 0c0 4.8 7 11 7 11z"/><circle cx="12" cy="10" r="2.5"/></symbol><symbol id="i-clock" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></symbol><symbol id="i-phone" viewBox="0 0 24 24"><path d="M5 4h4l2 5-2.5 1.5a11 11 0 005 5L15 13l5 2v4a2 2 0 01-2 2A16 16 0 013 6a2 2 0 012-2z"/></symbol><symbol id="i-dots" viewBox="0 0 24 24"><circle cx="8" cy="15" r="3"/><circle cx="16" cy="15" r="3"/><circle cx="12" cy="8" r="3"/></symbol><symbol id="i-cup" viewBox="0 0 24 24"><path d="M6 8h12l-1.4 12a2 2 0 01-2 1.8H9.4a2 2 0 01-2-1.8L6 8z"/><path d="M13 2l2 5"/></symbol></svg>
+<header class="site">
+  <div class="wrap nav-row">
+    <a href="../home/index.html" class="brand"><span class="brand-logo"><img src="../home/logo.svg" alt="BobaBliss logo" width="46" height="46"></span><span class="brand-text"><span class="logo-word">Boba<em>Bliss</em></span><br><span class="brand-sub">Bubble Tea &amp; Boba Shop</span></span></a>
+    <nav class="primary" aria-label="Main">
+      <div class="nav-item"><a href="../home/index.html">Home <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="caret"><path d="M6 9l6 6 6-6"/></svg></a>
+        <div class="dropdown"><a href="../home/index.html">Home 1</a><a href="../home2/home-2.html">Home 2</a></div></div>
+      <a href="../about/about.html">About Us</a><a href="../menu/menu.html">Menu</a><a href="../customize/customize.html" class="active" aria-current="page">Customize Your Drink</a><a href="../contact/contact.html">Contact</a>
+    </nav>
+    <div class="nav-actions">
+      <button class="btn btn-outline btn-sm" id="dir-toggle" aria-label="Toggle text direction">RTL</button>
+      <button class="icon-btn" id="theme-toggle" aria-label="Toggle dark mode"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" class="sun"><circle cx="12" cy="12" r="4.2"/><path d="M12 3v2.2M12 18.8V21M21 12h-2.2M5.2 12H3M18.4 5.6l-1.5 1.5M7.1 16.9l-1.5 1.5M18.4 18.4l-1.5-1.5M7.1 7.1L5.6 5.6"/></svg><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" class="moon"><path d="M20 14.5A8.5 8.5 0 1 1 9.5 4a7 7 0 0 0 10.5 10.5z"/></svg></button>
+      <a href="../order/order.html" class="btn btn-primary btn-sm desktop-only"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M6 8h12l-1 12H7L6 8z"/><path d="M9 8V6a3 3 0 016 0v2"/></svg><span class="btn-label">Order Now</span></a>
+      <button class="menu-toggle" id="menu-toggle" aria-label="Open menu" aria-expanded="false" aria-controls="mobile-panel"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M3 6h18M3 12h18M3 18h18"/></svg></button>
+    </div>
+  </div>
+  <div class="mobile-panel" id="mobile-panel">
+    <details class="mobile-dropdown"><summary>Home</summary><a href="../home/index.html">Home 1</a><a href="../home2/home-2.html">Home 2</a></details>
+    <a href="../about/about.html">About Us</a><a href="../menu/menu.html">Menu</a><a href="../customize/customize.html" class="active" aria-current="page">Customize Your Drink</a><a href="../contact/contact.html">Contact</a>
+    <a href="../order/order.html" class="btn btn-primary btn-sm mobile-cta"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M6 8h12l-1 12H7L6 8z"/><path d="M9 8V6a3 3 0 016 0v2"/></svg><span class="btn-label">Order Now</span></a>
+  </div>
+</header>
+<main class="cu-page">
+<section class="cu-hero"><div class="wrap cu-hero-grid">
+  <div>
+    <h1>Design a drink that is entirely yours</h1>
+    <p class="cu-hero-lead">Choose your tea, flavour, milk, sweetness, ice and toppings. We make it fresh to your order and your total updates as you go.</p>
+    <ul class="cu-hero-facts">
+      <li><svg class="i" viewBox="0 0 24 24"><use href="#i-check"/></svg>6 tea bases</li>
+      <li><svg class="i" viewBox="0 0 24 24"><use href="#i-check"/></svg>15 toppings</li>
+      <li><svg class="i" viewBox="0 0 24 24"><use href="#i-check"/></svg>Sweetness from 0 to 100%</li>
+    </ul>
+    <div class="cu-hero-cta">
+      <a href="#size" class="btn btn-primary">Start building</a>
+      <a href="#cu-combos" class="btn btn-outline">Start from a favourite</a>
+    </div>
+    <ol class="cu-how" aria-label="How it works">
+      <li><span class="cu-how-ic"><svg class="i" viewBox="0 0 24 24"><use href="#i-dots"/></svg></span><div><b>Build it</b><small>Pick every detail and watch the total update.</small></div></li>
+      <li><span class="cu-how-ic"><svg class="i" viewBox="0 0 24 24"><use href="#i-cup"/></svg></span><div><b>We brew it fresh</b><small>Made to your order, never pre-made.</small></div></li>
+      <li><span class="cu-how-ic"><svg class="i" viewBox="0 0 24 24"><use href="#i-pin"/></svg></span><div><b>Pick it up</b><small>Ready at Banjara Hills, Hyderabad.</small></div></li>
+    </ol>
+    <p class="cu-hero-open"><svg class="i" viewBox="0 0 24 24"><use href="#i-clock"/></svg>Open daily 11:00 – 22:00</p>
+  </div>
+  <div class="hv">
+    <span class="hv-sticker">Made fresh<br>to order</span>
+    <div class="hv-photo">
+      <img src="images/customize-hero.jpg" alt="Fresh bubble tea with tapioca pearls" fetchpriority="high">
+    </div>
+    <div class="hv-card" id="hv-card">
+      <div class="hv-tabs" role="tablist" aria-label="What you can customize">
+        <button type="button" role="tab" id="hv-t0" aria-controls="hv-p0" aria-selected="true">Tea</button>
+        <button type="button" role="tab" id="hv-t1" aria-controls="hv-p1" aria-selected="false" tabindex="-1">Toppings</button>
+        <button type="button" role="tab" id="hv-t2" aria-controls="hv-p2" aria-selected="false" tabindex="-1">Sweetness</button>
+        <button type="button" role="tab" id="hv-t3" aria-controls="hv-p3" aria-selected="false" tabindex="-1">Ice</button>
+      </div>
+      <div class="hv-panel" role="tabpanel" id="hv-p0" aria-labelledby="hv-t0">
+        <p><b>6 tea bases</b> to start from. Then add a flavour and your choice of milk.</p>
+        <a href="#base" class="hv-go">Choose your tea</a>
+      </div>
+      <div class="hv-panel" role="tabpanel" id="hv-p1" aria-labelledby="hv-t1" hidden>
+        <p><b>15 toppings</b>, from chewy pearls to jelly and popping boba. Add as many as you like.</p>
+        <a href="#toppings" class="hv-go">Pick toppings</a>
+      </div>
+      <div class="hv-panel" role="tabpanel" id="hv-p2" aria-labelledby="hv-t2" hidden>
+        <div class="hv-sweet">
+          <div class="hv-sweet-top"><output id="hv-out" for="hv-range"><b>50%</b> Half sweet</output><span class="hv-dots" id="hv-dots" aria-hidden="true"><i></i><i></i><i></i><i></i></span></div>
+          <input type="range" id="hv-range" min="0" max="100" step="25" value="50" aria-label="Sweetness preview">
+          <div class="hv-scale" aria-hidden="true"><span>0%</span><span>25%</span><span>50%</span><span>75%</span><span>100%</span></div>
+        </div>
+        <a href="#sweetness" class="hv-go">Set your sweetness</a>
+      </div>
+      <div class="hv-panel" role="tabpanel" id="hv-p3" aria-labelledby="hv-t3" hidden>
+        <p>Regular, less or no ice. Your cup, your chill.</p>
+        <a href="#sweetness" class="hv-go">Set your ice</a>
+      </div>
+    </div>
+  </div>
+</div></section>
+<section class="cu-favs"><div class="wrap">
+  <div class="cu-combos" id="cu-combos">
+    <h2>Or start from a favourite</h2>
+    <p>Pick one, then change anything you like.</p>
+  </div>
+</div></section>
+<div class="wrap cu-layout">
+  <div id="cu-steps"></div>
+  <aside class="cu-sum" id="cu-sum" aria-label="Your drink">
+    <div class="cu-preview" id="cu-cup"></div>
+    <div class="cu-sum-body">
+      <div class="cu-form">
+        <h2 id="cu-name">Your drink</h2>
+        <dl class="cu-lines" id="cu-lines"></dl>
+        <div class="cu-total"><span>Total</span><b id="cu-price">₹150</b></div>
+        <button class="btn btn-primary" id="cu-order" type="button">Place order</button>
+        <button class="cu-reset" id="cu-reset" type="button">Reset</button>
+      </div>
+      <div class="cu-done" role="status">
+        <div class="tick"><svg class="i" viewBox="0 0 24 24"><use href="#i-check"/></svg></div>
+        <h2>Order placed</h2>
+        <p id="cu-done-name"></p>
+        <button class="btn btn-outline" id="cu-again" type="button">Edit this drink</button>
+      </div>
+    </div>
+  </aside>
+</div>
+<section class="cu-cta-sec"><div class="wrap">
+  <div class="cu-cta">
+    <div class="cu-cta-copy">
+      <h2>Ordering for friends or the office?</h2>
+      <p>We prepare every cup to your custom order and have it ready when you arrive.</p>
+      <ol class="cu-cta-steps">
+        <li>Pick the date</li>
+        <li>Set your pickup time</li>
+        <li>Tell us the headcount</li>
+      </ol>
+      <div class="cu-cta-btns"><a href="../contact/contact.html" class="btn btn-primary">Plan a group order</a><a href="../menu/menu.html" class="btn btn-outline">Browse the menu</a></div>
+    </div>
+    <figure class="cu-cta-img">
+      <img src="images/group-order-friends.jpg" alt="Two friends holding up their drinks together" loading="lazy">
+    </figure>
+  </div>
+</div></section>
+</main>
+<footer class="site">
+  <div class="wrap footer-grid">
+    <div class="footer-brand"><a href="../home/index.html" class="brand"><span class="brand-logo"><img src="../home/logo.svg" alt="BobaBliss logo" width="46" height="46"></span><span class="brand-text"><span class="logo-word">Boba<em>Bliss</em></span><br><span class="brand-sub">Bubble Tea &amp; Boba Shop</span></span></a>
+      <p class="footer-desc">Fresh-brewed tea, chewy pearls and flavours made to be shared. Build your perfect cup, your way.</p>
+      <div class="socials">
+        <a href="#" aria-label="Instagram"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="3.5" y="3.5" width="17" height="17" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17" cy="7" r=".8" fill="currentColor" stroke="none"/></svg></a>
+        <a href="#" aria-label="Facebook"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M14 8h3V4h-3a4 4 0 00-4 4v2H7v4h3v7h4v-7h3l1-4h-4V8z"/></svg></a>
+        <a href="#" aria-label="TikTok"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M14 3v11.5a3.5 3.5 0 11-3.5-3.5M14 3c.4 2.6 2 4.2 5 4.5"/></svg></a>
+      </div>
+    </div>
+    <div class="footer-col"><h4>Quick links</h4><ul><li><a href="../home/index.html">Home</a></li><li><a href="../home2/home-2.html">Home 2</a></li><li><a href="../about/about.html">About Us</a></li><li><a href="../menu/menu.html">Menu</a></li><li><a href="../contact/contact.html">Contact</a></li></ul></div>
+    <div class="footer-col"><h4>Menu</h4><ul><li><a href="../menu/menu.html#milk-tea">Milk Tea</a></li><li><a href="../menu/menu.html#fruit-tea">Fruit Tea</a></li><li><a href="../menu/menu.html#smoothies">Slushes</a></li><li><a href="../menu/menu.html#signature">Signature</a></li><li><a href="../menu/menu.html#toppings">Toppings</a></li></ul></div>
+    <div class="footer-col"><h4>Customize</h4><ul><li><a href="../customize/customize.html#base">Choose your tea</a></li><li><a href="../customize/customize.html#sweetness">Sweetness &amp; ice</a></li><li><a href="../customize/customize.html#toppings">Pick toppings</a></li></ul></div>
+    <div class="footer-col"><h4>Visit us</h4><ul><li class="contact-line"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21s7-6.2 7-11a7 7 0 10-14 0c0 4.8 7 11 7 11z"/><circle cx="12" cy="10" r="2.5"/></svg><span>Road No. 12, Banjara Hills, Hyderabad 500034</span></li><li class="contact-line"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg><span>Daily 11:00 – 22:00</span></li><li class="contact-line"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M5 4h4l2 5-2.5 1.5a11 11 0 005 5L15 13l5 2v4a2 2 0 01-2 2A16 16 0 013 6a2 2 0 012-2z"/></svg><span>+91 00000 00001</span></li><li><a href="../contact/contact.html#stores">Find a store</a></li></ul></div>
+  </div>
+  <div class="wrap footer-bottom"><p>© 2026 BobaBliss. All rights reserved.</p><div class="footer-bottom-links"><a href="../additional/privacy.html">Privacy</a><a href="../additional/terms.html">Terms</a></div></div>
+</footer>
+<script src="customize.js"></script>
+</body>
+</html>

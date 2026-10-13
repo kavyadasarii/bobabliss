@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" data-theme="light">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>About Us — BobaBliss</title>
+<meta name="description" content="Learn about BobaBliss: our story, our mission to make every cup fresh and personal, and our vision for a neighbourhood bubble tea shop people love.">
+<link rel="icon" type="image/svg+xml" href="../home/favicon.svg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@500;600&family=Nunito:wght@400;600;700;800&display=swap" rel="stylesheet">
+
+<link rel="stylesheet" href="../home/style.css">
+<link rel="stylesheet" href="about.css">
+<script src="../home/script.js"></script>
+</head>
+<body>
+
+<header class="site">
+  <div class="wrap nav-row">
+    <a href="../home/index.html" class="brand">
+      <span class="brand-logo"><img src="../home/logo.svg" alt="BobaBliss logo" width="46" height="46"></span>
+      <span class="brand-text">
+        <span class="logo-word">Boba<em>Bliss</em></span><br>
+        <span class="brand-sub">Bubble Tea &amp; Boba Shop</span>
+      </span>
+    </a>
+
+    <nav class="primary" aria-label="Main">
+      <div class="nav-item">
+        <a href="../home/index.html">Home
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="caret"><path d="M6 9l6 6 6-6"/></svg>
+        </a>
+        <div class="dropdown">
+          <a href="../home/index.html">Home 1</a>
+          <a href="../home2/home-2.html">Home 2</a>
+        </div>
+      </div>
+      <a href="../about/about.html" class="active" aria-current="page">About Us</a>
+      <a href="../menu/menu.html">Menu</a>
+      <a href="../customize/customize.html">Customize Your Drink</a>
+      <a href="../contact/contact.html">Contact</a>
+    </nav>
+
+    <div class="nav-actions">
+      <button class="btn btn-outline btn-sm" id="dir-toggle" aria-label="Toggle text direction">RTL</button>
+      <button class="icon-btn" id="theme-toggle" aria-label="Toggle dark mode"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" class="sun"><circle cx="12" cy="12" r="4.2"/><path d="M12 3v2.2M12 18.8V21M21 12h-2.2M5.2 12H3M18.4 5.6l-1.5 1.5M7.1 16.9l-1.5 1.5M18.4 18.4l-1.5-1.5M7.1 7.1L5.6 5.6"/></svg><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" class="moon"><path d="M20 14.5A8.5 8.5 0 1 1 9.5 4a7 7 0 0 0 10.5 10.5z"/></svg></button>
+      <a href="../order/order.html" class="btn btn-primary btn-sm desktop-only"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M6 8h12l-1 12H7L6 8z"/><path d="M9 8V6a3 3 0 016 0v2"/></svg><span class="btn-label">Order Now</span></a>
+      <button class="menu-toggle" id="menu-toggle" aria-label="Open menu" aria-expanded="false" aria-controls="mobile-panel"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M3 6h18M3 12h18M3 18h18"/></svg></button>
+    </div>
+  </div>
+
+  <div class="mobile-panel" id="mobile-panel">
+    <details class="mobile-dropdown">
+      <summary>Home</summary>
+      <a href="../home/index.html">Home 1</a>
+      <a href="../home2/home-2.html">Home 2</a>
+    </details>
+    <a href="../about/about.html">About Us</a>
+    <a href="../menu/menu.html">Menu</a>
+    <a href="../customize/customize.html">Customize Your Drink</a>
+    <a href="../contact/contact.html">Contact</a>
+    <a href="../order/order.html" class="btn btn-primary btn-sm mobile-cta"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M6 8h12l-1 12H7L6 8z"/><path d="M9 8V6a3 3 0 016 0v2"/></svg><span class="btn-label">Order Now</span></a>
+  </div>
+</header>
+
+<main class="ab-page">
+
+<svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false">
+  <symbol id="i-check" viewBox="0 0 24 24"><path d="M5 13l4 4L19 7"/></symbol>
+  <symbol id="i-drop" viewBox="0 0 24 24"><path d="M12 21c-4.5 0-7-3-7-7 0-5 7-11 7-11s7 6 7 11c0 4-2.5 7-7 7z"/><path d="M12 8c1 1.5 1.5 3 1.2 5"/></symbol>
+  <symbol id="i-heart" viewBox="0 0 24 24"><path d="M12 21s-7-4.4-7-10a4 4 0 017-2.6A4 4 0 0119 11c0 5.6-7 10-7 10z"/></symbol>
+  <symbol id="i-leaf" viewBox="0 0 24 24"><path d="M5 19c0-8 5-14 15-14 0 10-6 15-14 15"/><path d="M5 19c3-5 6-8 10-10"/></symbol>
+  <symbol id="i-users" viewBox="0 0 24 24"><circle cx="9" cy="8" r="3.2"/><path d="M3 20c0-3.5 2.7-6 6-6s6 2.5 6 6"/><path d="M16 5.2a3.2 3.2 0 010 5.6M18 14.4c1.8.8 3 2.7 3 5.6"/></symbol>
+  <symbol id="i-target" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="5"/><circle cx="12" cy="12" r="1.2"/></symbol>
+  <symbol id="i-eye" viewBox="0 0 24 24"><path d="M2 12s3.6-7 10-7 10 7 10 7-3.6 7-10 7S2 12 2 12z"/><circle cx="12" cy="12" r="3"/></symbol>
+</svg>
+
+
+<section class="ab-hero">
+  <div class="wrap ab-hero-grid">
+    <div class="ab-hero-copy">
+      <h1>Tea, pearls and a place to share them</h1>
+      <p class="ab-lead">BobaBliss started with a simple idea: bubble tea should taste fresh, feel personal and make people smile. Meet the purpose and the process behind every cup.</p>
+      <div class="ab-hero-btns">
+        <a href="../customize/customize.html" class="btn btn-primary">Build your drink</a>
+        <a href="#mission" class="btn btn-outline">Our mission</a>
+      </div>
+      <ul class="ab-chips">
+        <li><svg viewBox="0 0 24 24"><use href="#i-check"/></svg>Brewed fresh daily</li>
+        <li><svg viewBox="0 0 24 24"><use href="#i-check"/></svg>Pearls cooked in-store</li>
+        <li><svg viewBox="0 0 24 24"><use href="#i-check"/></svg>Made your way</li>
+      </ul>
+    </div>
+
+    <div class="ab-visual">
+      <div class="ab-collage">
+      <figure class="c1"><img src="images/about-hero-taro.jpg" alt="Taro pearl milk tea on a wooden café table" fetchpriority="high"><figcaption>Brewed fresh daily</figcaption></figure>
+      <figure class="c2"><img src="images/about-hero-green-tea.jpg" alt="Iced jasmine green tea with lychee jelly on a sunny windowsill" fetchpriority="high"></figure>
+      <figure class="c3"><img src="images/about-hero-honeydew.jpg" alt="Honeydew milk tea with pearls on a park bench" fetchpriority="high"></figure>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="wrap">
+  <div class="ab-stats">
+    <div class="ab-stat"><b>30+</b><span>Drinks on the menu</span></div>
+    <div class="ab-stat"><b>15</b><span>Toppings to choose from</span></div>
+    <div class="ab-stat"><b>0–100%</b><span>Sweetness levels</span></div>
+    <div class="ab-stat"><b>11–22</b><span>Open every day</span></div>
+  </div>
+</div>
+
+
+<section class="ab-section">
+  <div class="wrap ab-split">
+    <div class="ab-split-img"><img src="images/about-story-night-market.jpg" alt="A night market tea stall lit by red lanterns" loading="lazy"></div>
+    <div>
+      <h2>Born in the night markets, made for your neighbourhood</h2>
+      <p class="lead">Bubble tea started in the lively night markets of Taiwan, where friends shared a cup as easily as a conversation. We bring that same playful, welcoming spirit to every BobaBliss store.</p>
+      <p class="lead">We keep the menu simple to love and easy to change. Start with a favourite or build your own, and we will make it fresh to your order.</p>
+      <ul class="ab-points">
+        <li><svg viewBox="0 0 24 24"><use href="#i-check"/></svg><span><b>Small-batch tea.</b> Brewed through the day, never from concentrate.</span></li>
+        <li><svg viewBox="0 0 24 24"><use href="#i-check"/></svg><span><b>Pearls cooked in-store.</b> Soft, chewy and still warm when they reach your cup.</span></li>
+        <li><svg viewBox="0 0 24 24"><use href="#i-check"/></svg><span><b>Real fruit.</b> Fruit teas and smoothies are made with fruit, not syrups alone.</span></li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+
+<section class="ab-section ab-alt" id="mission">
+  <div class="wrap">
+    <div class="ab-head">
+      <h2>What drives us</h2>
+      <p>Our mission is what we do every day. Our vision is where we are headed.</p>
+    </div>
+
+    <div class="ab-split ab-row">
+      <div class="ab-split-img wide"><img src="images/about-mission-counter.jpg" alt="Jars of tapioca pearls and tea canisters on the shop counter" loading="lazy"></div>
+      <div>
+        <span class="ab-ico"><svg viewBox="0 0 24 24"><use href="#i-target"/></svg></span>
+        <h3>Our mission</h3>
+        <p class="ab-statement">To make every cup of bubble tea fresh, personal and joyful, brewed from real tea, finished with real pearls and made exactly the way you like it.</p>
+        <ul class="ab-points">
+          <li><svg viewBox="0 0 24 24"><use href="#i-check"/></svg><span>Brew tea fresh in small batches all day.</span></li>
+          <li><svg viewBox="0 0 24 24"><use href="#i-check"/></svg><span>Let every guest choose their sweetness, ice, milk and toppings.</span></li>
+          <li><svg viewBox="0 0 24 24"><use href="#i-check"/></svg><span>Serve each drink with a friendly smile and a clean cup.</span></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="ab-split ab-row rev">
+      <div class="ab-split-img wide"><img src="images/about-vision-shop.jpg" alt="A sunny, cosy bubble tea shop seating area" loading="lazy"></div>
+      <div>
+        <span class="ab-ico ab-ico--b"><svg viewBox="0 0 24 24"><use href="#i-eye"/></svg></span>
+        <h3>Our vision</h3>
+        <p class="ab-statement">To be the neighbourhood bubble tea shop people trust and love coming back to, a place where good drinks bring people together in every city we serve.</p>
+        <ul class="ab-points">
+          <li><svg viewBox="0 0 24 24"><use href="#i-check"/></svg><span>Set the standard for quality in bubble tea.</span></li>
+          <li><svg viewBox="0 0 24 24"><use href="#i-check"/></svg><span>Build stores that feel like a second living room.</span></li>
+          <li><svg viewBox="0 0 24 24"><use href="#i-check"/></svg><span>Grow carefully, keeping every cup as good as the first.</span></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<section class="ab-section">
+  <div class="wrap">
+    <div class="ab-head">
+      <h2>The values behind every cup</h2>
+      <p>Four promises we keep in every store, every day.</p>
+    </div>
+    <div class="ab-values">
+      <div class="ab-value"><span class="ab-ico"><svg viewBox="0 0 24 24"><use href="#i-leaf"/></svg></span><h3>Freshness first</h3><p>Tea is brewed in small batches and replaced when it is past its best.</p></div>
+      <div class="ab-value"><span class="ab-ico"><svg viewBox="0 0 24 24"><use href="#i-drop"/></svg></span><h3>Made your way</h3><p>Sweetness, ice, milk and toppings are always your choice.</p></div>
+      <div class="ab-value"><span class="ab-ico"><svg viewBox="0 0 24 24"><use href="#i-heart"/></svg></span><h3>Honest ingredients</h3><p>Real tea leaves, real fruit and pearls cooked in-store.</p></div>
+      <div class="ab-value"><span class="ab-ico"><svg viewBox="0 0 24 24"><use href="#i-users"/></svg></span><h3>Welcome for all</h3><p>A friendly crew and plant-based options so everyone can join in.</p></div>
+    </div>
+  </div>
+</section>
+
+
+<section class="ab-section ab-alt">
+  <div class="wrap ab-split">
+    <div class="ab-split-img tall"><img src="images/about-process-pearls.jpg" alt="Tapioca pearls cooking beside freshly steeped tea" loading="lazy"></div>
+    <div>
+      <h2>From leaf to cup</h2>
+      <p class="lead">Every drink follows the same four steps, whichever store you visit.</p>
+      <ol class="ab-timeline">
+        <li><h3>Brew the tea</h3><p>Loose-leaf black, jasmine green or oolong is steeped fresh through the day.</p></li>
+        <li><h3>Cook the pearls</h3><p>Tapioca pearls are cooked in-store in small batches so they stay soft and chewy.</p></li>
+        <li><h3>Shake or blend</h3><p>Your tea, milk, fruit and sweetness are shaken or blended to order.</p></li>
+        <li><h3>Top and serve</h3><p>Toppings go in, the cup is sealed and your drink is handed over fresh.</p></li>
+      </ol>
+    </div>
+  </div>
+</section>
+
+
+<section class="ab-section">
+  <div class="wrap ab-split rev">
+    <div class="ab-split-img"><img src="images/grouporder.jpg" alt="Two friends sharing bubble teas on a bench" loading="lazy"></div>
+    <div>
+      <h2>Part of the neighbourhood</h2>
+      <p class="lead">Our stores are built for catching up with friends, studying with a drink in hand and celebrating small wins. We love seeing familiar faces, and we are always glad to meet new ones.</p>
+      <ul class="ab-points">
+        <li><svg viewBox="0 0 24 24"><use href="#i-check"/></svg><span><b>Group orders.</b> Ordering for a team or a party? Tell us the date and headcount.</span></li>
+        <li><svg viewBox="0 0 24 24"><use href="#i-check"/></svg><span><b>Birthdays and events.</b> We prepare drinks ahead so everyone gets their favourite.</span></li>
+        <li><svg viewBox="0 0 24 24"><use href="#i-check"/></svg><span><b>Open every day.</b> Come by between 11:00 and 22:00.</span></li>
+      </ul>
+      <a href="../contact/contact.html" class="btn btn-primary">Plan a group order</a>
+    </div>
+  </div>
+</section>
+
+
+<section class="ab-cta">
+  <div class="ab-cta-bg"><img src="images/about-cta.jpg" alt="" loading="lazy"></div>
+  <div class="wrap ab-cta-inner">
+    <h2>Come and taste the difference</h2>
+    <p>Build a drink that is exactly yours, or visit a store and let our crew help you choose.</p>
+    <div class="ab-cta-btns">
+      <a href="../customize/customize.html" class="btn btn-primary">Build your drink</a>
+      <a href="../contact/contact.html#stores" class="btn btn-outline">Find a store</a>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<footer class="site">
+  <div class="wrap footer-grid">
+    <div class="footer-brand">
+      <a href="../home/index.html" class="brand">
+      <span class="brand-logo"><img src="../home/logo.svg" alt="BobaBliss logo" width="46" height="46"></span>
+      <span class="brand-text">
+        <span class="logo-word">Boba<em>Bliss</em></span><br>
+        <span class="brand-sub">Bubble Tea &amp; Boba Shop</span>
+      </span>
+    </a>
+      <p class="footer-desc">Fresh-brewed tea, chewy pearls and flavours made to be shared. Build your perfect cup, your way.</p>
+      <div class="socials">
+        <a href="#" aria-label="Instagram"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="3.5" y="3.5" width="17" height="17" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17" cy="7" r=".8" fill="currentColor" stroke="none"/></svg></a>
+        <a href="#" aria-label="Facebook"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M14 8h3V4h-3a4 4 0 00-4 4v2H7v4h3v7h4v-7h3l1-4h-4V8z"/></svg></a>
+        <a href="#" aria-label="TikTok"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M14 3v11.5a3.5 3.5 0 11-3.5-3.5M14 3c.4 2.6 2 4.2 5 4.5"/></svg></a>
+      </div>
+    </div>
+
+    <div class="footer-col"><h4>Quick links</h4><ul><li><a href="../home/index.html">Home</a></li><li><a href="../home2/home-2.html">Home 2</a></li><li><a href="../about/about.html">About Us</a></li><li><a href="../menu/menu.html">Menu</a></li><li><a href="../contact/contact.html">Contact</a></li></ul></div>
+
+    <div class="footer-col"><h4>Menu</h4><ul><li><a href="../menu/menu.html#milk-tea">Milk Tea</a></li><li><a href="../menu/menu.html#fruit-tea">Fruit Tea</a></li><li><a href="../menu/menu.html#smoothies">Slushes</a></li><li><a href="../menu/menu.html#signature">Signature</a></li><li><a href="../menu/menu.html#toppings">Toppings</a></li></ul></div>
+
+    <div class="footer-col">
+      <h4>Customize</h4>
+      <ul>
+        <li><a href="../customize/customize.html#base">Choose your tea</a></li>
+        <li><a href="../customize/customize.html#sweetness">Sweetness &amp; ice</a></li>
+        <li><a href="../customize/customize.html#toppings">Pick toppings</a></li>
+      </ul>
+    </div>
+
+    <div class="footer-col">
+      <h4>Visit us</h4>
+      <ul>
+        <li class="contact-line"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21s7-6.2 7-11a7 7 0 10-14 0c0 4.8 7 11 7 11z"/><circle cx="12" cy="10" r="2.5"/></svg><span>Road No. 12, Banjara Hills, Hyderabad 500034</span></li>
+        <li class="contact-line"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg><span>Daily 11:00 – 22:00</span></li>
+        <li class="contact-line"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M5 4h4l2 5-2.5 1.5a11 11 0 005 5L15 13l5 2v4a2 2 0 01-2 2A16 16 0 013 6a2 2 0 012-2z"/></svg><span>+91 00000 00001</span></li>
+        <li><a href="../contact/contact.html#stores">Find a store</a></li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="wrap footer-bottom">
+    <p>© 2026 BobaBliss. All rights reserved.</p>
+    <div class="footer-bottom-links">
+      <a href="../additional/privacy.html">Privacy</a>
+      <a href="../additional/terms.html">Terms</a>
+    </div>
+  </div>
+</footer>
+
+
+</body>
+</html>

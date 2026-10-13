@@ -1,0 +1,419 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" data-theme="light">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>BobaBliss — Bubble Tea &amp; Boba Shop</title>
+<meta name="description" content="Fresh-brewed bubble tea, chewy tapioca pearls and fruity flavours made your way. Explore our signature flavors, build your own drink and find a store near you.">
+<link rel="icon" type="image/svg+xml" href="../home/favicon.svg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@500;600&family=Nunito:wght@400;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+<link rel="stylesheet" href="home.css">
+<script src="script.js"></script>
+</head>
+<body>
+
+<header class="site">
+  <div class="wrap nav-row">
+    <a href="../home/index.html" class="brand">
+      <span class="brand-logo"><img src="logo.svg" alt="BobaBliss logo" width="46" height="46"></span>
+      <span class="brand-text">
+        <span class="logo-word">Boba<em>Bliss</em></span><br>
+        <span class="brand-sub">Bubble Tea &amp; Boba Shop</span>
+      </span>
+    </a>
+
+    <nav class="primary" aria-label="Main">
+      <div class="nav-item">
+        <a href="../home/index.html" class="active" aria-current="page">Home
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="caret"><path d="M6 9l6 6 6-6"/></svg>
+        </a>
+        <div class="dropdown">
+          <a href="../home/index.html">Home 1</a>
+          <a href="../home2/home-2.html">Home 2</a>
+        </div>
+      </div>
+      <a href="../about/about.html">About Us</a>
+      <a href="../menu/menu.html">Menu</a>
+      <a href="../customize/customize.html">Customize Your Drink</a>
+      <a href="../contact/contact.html">Contact</a>
+    </nav>
+
+    <div class="nav-actions">
+      <button class="btn btn-outline btn-sm" id="dir-toggle" aria-label="Toggle text direction">RTL</button>
+      <button class="icon-btn" id="theme-toggle" aria-label="Toggle dark mode"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" class="sun"><circle cx="12" cy="12" r="4.2"/><path d="M12 3v2.2M12 18.8V21M21 12h-2.2M5.2 12H3M18.4 5.6l-1.5 1.5M7.1 16.9l-1.5 1.5M18.4 18.4l-1.5-1.5M7.1 7.1L5.6 5.6"/></svg><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" class="moon"><path d="M20 14.5A8.5 8.5 0 1 1 9.5 4a7 7 0 0 0 10.5 10.5z"/></svg></button>
+      <a href="../order/order.html" class="btn btn-primary btn-sm desktop-only"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M6 8h12l-1 12H7L6 8z"/><path d="M9 8V6a3 3 0 016 0v2"/></svg><span class="btn-label">Order Now</span></a>
+      <button class="menu-toggle" id="menu-toggle" aria-label="Open menu" aria-expanded="false" aria-controls="mobile-panel"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M3 6h18M3 12h18M3 18h18"/></svg></button>
+    </div>
+  </div>
+
+  <div class="mobile-panel" id="mobile-panel">
+    <details class="mobile-dropdown">
+      <summary>Home</summary>
+      <a href="../home/index.html">Home 1</a>
+      <a href="../home2/home-2.html">Home 2</a>
+    </details>
+    <a href="../about/about.html">About Us</a>
+    <a href="../menu/menu.html">Menu</a>
+    <a href="../customize/customize.html">Customize Your Drink</a>
+    <a href="../contact/contact.html">Contact</a>
+    <a href="../order/order.html" class="btn btn-primary btn-sm mobile-cta"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M6 8h12l-1 12H7L6 8z"/><path d="M9 8V6a3 3 0 016 0v2"/></svg><span class="btn-label">Order Now</span></a>
+  </div>
+</header>
+
+<main class="hm-page">
+
+<svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false">
+  <symbol id="i-check" viewBox="0 0 24 24"><path d="M5 13l4 4L19 7"/></symbol>
+  <symbol id="i-cup" viewBox="0 0 24 24"><path d="M6 8h12l-1.4 12a2 2 0 01-2 1.8H9.4a2 2 0 01-2-1.8L6 8z"/><path d="M13 2l2 5"/></symbol>
+  <symbol id="i-drop" viewBox="0 0 24 24"><path d="M12 21c-4.5 0-7-3-7-7 0-5 7-11 7-11s7 6 7 11c0 4-2.5 7-7 7z"/><path d="M12 8c1 1.5 1.5 3 1.2 5"/></symbol>
+  <symbol id="i-blend" viewBox="0 0 24 24"><path d="M6 4h12l-1.5 16h-9L6 4z"/><path d="M7.5 10h9M12 4l1.5-2"/></symbol>
+  <symbol id="i-dots" viewBox="0 0 24 24"><circle cx="8" cy="15" r="3"/><circle cx="16" cy="15" r="3"/><circle cx="12" cy="8" r="3"/></symbol>
+  <symbol id="i-heart" viewBox="0 0 24 24"><path d="M12 21s-7-4.4-7-10a4 4 0 017-2.6A4 4 0 0119 11c0 5.6-7 10-7 10z"/></symbol>
+  <symbol id="i-pin" viewBox="0 0 24 24"><path d="M12 21s7-6.2 7-11a7 7 0 10-14 0c0 4.8 7 11 7 11z"/><circle cx="12" cy="10" r="2.5"/></symbol>
+  <symbol id="i-clock" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></symbol>
+  <symbol id="i-phone" viewBox="0 0 24 24"><path d="M5 4h4l2 5-2.5 1.5a11 11 0 005 5L15 13l5 2v4a2 2 0 01-2 2A16 16 0 013 6a2 2 0 012-2z"/></symbol>
+  <symbol id="i-users" viewBox="0 0 24 24"><circle cx="9" cy="8" r="3.2"/><path d="M3 20c0-3.5 2.7-6 6-6s6 2.5 6 6"/><path d="M16 5.2a3.2 3.2 0 010 5.6M18 14.4c1.8.8 3 2.7 3 5.6"/></symbol>
+  <symbol id="i-leaf" viewBox="0 0 24 24"><path d="M5 19c0-8 5-14 15-14 0 10-6 15-14 15"/><path d="M5 19c3-5 6-8 10-10"/></symbol>
+  <symbol id="i-sprout" viewBox="0 0 24 24"><path d="M12 21v-8"/><path d="M12 13c0-4-3-6-7-6 0 4 3 6 7 6zM12 11c0-3 2.5-5 6-5 0 3.5-2.5 5-6 5z"/></symbol>
+  <symbol id="i-milk" viewBox="0 0 24 24"><path d="M8 3h8l1 4-1 2v11a1 1 0 01-1 1H9a1 1 0 01-1-1V9L7 7l1-4z"/><path d="M8 12h8"/></symbol>
+  <symbol id="i-snow" viewBox="0 0 24 24"><path d="M12 3v18M4.2 7.5l15.6 9M19.8 7.5l-15.6 9"/></symbol>
+</svg>
+
+
+<section class="hm-hero">
+  <div class="hm-hero-bg"><img src="images/home-hero.jpg" alt="Fresh bubble teas on a café counter" fetchpriority="high"></div>
+  <div class="wrap hm-hero-grid">
+    <div class="hm-hero-copy">
+      <h1>Bubble tea, brewed fresh and made your way.</h1>
+      <p class="hm-lead">Real tea, chewy tapioca pearls cooked in-store and fruit flavours you can dial to your taste. Choose a favourite from the menu or build your own cup in a minute.</p>
+      <div class="hm-ctas">
+        <a href="../customize/customize.html" class="btn btn-primary">Build your drink</a>
+        <a href="../menu/menu.html" class="btn btn-outline">View the menu</a>
+      </div>
+      <ul class="hm-chips">
+        <li><svg class="ico" viewBox="0 0 24 24"><use href="#i-check"/></svg>Real tapioca pearls</li>
+        <li><svg class="ico" viewBox="0 0 24 24"><use href="#i-check"/></svg>Brewed fresh daily</li>
+        <li><svg class="ico" viewBox="0 0 24 24"><use href="#i-check"/></svg>Sweetness your way</li>
+      </ul>
+    </div>
+
+    <aside class="hm-today" aria-label="Store information">
+      <h2>Today at BobaBliss</h2>
+      <ul>
+        <li><svg class="ico" viewBox="0 0 24 24"><use href="#i-clock"/></svg><span><b>Open daily</b>11:00 – 22:00</span></li>
+        <li><svg class="ico" viewBox="0 0 24 24"><use href="#i-dots"/></svg><span><b>Pearls cooked in-store</b>Fresh batches through the day</span></li>
+        <li><svg class="ico" viewBox="0 0 24 24"><use href="#i-users"/></svg><span><b>Ordering for a group?</b>Tell us the date and headcount</span></li>
+      </ul>
+    </aside>
+  </div>
+</section>
+
+
+<div class="hm-stats">
+  <div class="wrap">
+    <div class="hm-stats-grid">
+      <div class="hm-stat"><b>30+</b><span>Drinks on the menu</span></div>
+      <div class="hm-stat"><b>15</b><span>Toppings to choose from</span></div>
+      <div class="hm-stat"><b>0–100%</b><span>Sweetness levels</span></div>
+      <div class="hm-stat"><b>4.9 / 5</b><span>Average customer rating</span></div>
+    </div>
+  </div>
+</div>
+
+
+<section class="hm-section" id="signature">
+  <div class="wrap">
+    <div class="hm-head">
+      <div>
+        <h2>Our crowd favourites</h2>
+        <p>Three cups our regulars keep coming back for. Order one as it is, or adjust the sweetness, ice and toppings to suit you.</p>
+      </div>
+    </div>
+
+    <div class="hm-cards">
+      <article class="hm-card">
+        <div class="hm-card-img"><img src="images/home-taro-pearl-milk-tea.jpg" alt="Purple taro milk tea with tapioca pearls" loading="lazy"><span class="hm-badge">Bestseller</span></div>
+        <div class="hm-card-body">
+          <h3>Taro Pearl Milk Tea</h3>
+          <p>Velvety taro blended with fresh milk tea and a generous scoop of chewy brown-sugar pearls.</p>
+          <dl class="hm-meta"><div><dt>Style</dt><dd>Creamy</dd></div><div><dt>Suggested sweetness</dt><dd>50%</dd></div><div><dt>Pairs with</dt><dd>Tapioca pearls</dd></div></dl>
+          <a href="../customize/customize.html" class="btn btn-outline">Customize this drink</a>
+        </div>
+      </article>
+      <article class="hm-card">
+        <div class="hm-card-img"><img src="images/home-jade-jasmine-green.jpg" alt="Iced jasmine green tea with aloe vera" loading="lazy"><span class="hm-badge">Light and floral</span></div>
+        <div class="hm-card-body">
+          <h3>Jade Jasmine Green</h3>
+          <p>Fragrant jasmine green tea, brewed fresh and shaken with ice for a crisp, gently sweet sip.</p>
+          <dl class="hm-meta"><div><dt>Style</dt><dd>Floral</dd></div><div><dt>Suggested sweetness</dt><dd>25%</dd></div><div><dt>Pairs with</dt><dd>Aloe vera</dd></div></dl>
+          <a href="../customize/customize.html" class="btn btn-outline">Customize this drink</a>
+        </div>
+      </article>
+      <article class="hm-card">
+        <div class="hm-card-img"><img src="images/home-honeydew-fresh.jpg" alt="Pale green honeydew milk tea" loading="lazy"><span class="hm-badge">New</span></div>
+        <div class="hm-card-body">
+          <h3>Honeydew Fresh</h3>
+          <p>Juicy honeydew melon with a hint of milk and soft pearls. The coolest way to beat the heat.</p>
+          <dl class="hm-meta"><div><dt>Style</dt><dd>Fruity</dd></div><div><dt>Suggested sweetness</dt><dd>50%</dd></div><div><dt>Pairs with</dt><dd>Popping boba</dd></div></dl>
+          <a href="../customize/customize.html" class="btn btn-outline">Customize this drink</a>
+        </div>
+      </article>
+    </div>
+
+    <h3 class="hm-sub">More to try</h3>
+    <ul class="hm-list">
+      <li><div><b>Brown Sugar Pearl Milk Tea</b><span>Black milk tea with warm brown-sugar syrup and fresh pearls.</span></div><em>Milk tea</em></li>
+      <li><div><b>Classic Milk Tea</b><span>Strong-brewed black tea and fresh milk. The one that started it all.</span></div><em>Milk tea</em></li>
+      <li><div><b>Mango Passionfruit Green Tea</b><span>Green tea shaken with ripe mango and tangy passionfruit.</span></div><em>Fruit tea</em></li>
+      <li><div><b>Strawberry Lychee Fruit Tea</b><span>Sweet strawberry and lychee over light jasmine tea with lychee jelly.</span></div><em>Fruit tea</em></li>
+      <li><div><b>Matcha Latte with Cheese Foam</b><span>Ceremonial-style matcha and milk under a salted cream cap.</span></div><em>Milk tea</em></li>
+      <li><div><b>Mango Smoothie</b><span>Thick, icy mango blend with a swirl of coconut milk.</span></div><em>Smoothie</em></li>
+    </ul>
+    <div class="hm-more"><a href="../menu/menu.html" class="btn btn-outline">See the full menu</a></div>
+  </div>
+</section>
+
+
+<section class="hm-section hm-alt">
+  <div class="wrap">
+    <div class="hm-head">
+      <div>
+        <h2>Something for every craving</h2>
+        <p>From creamy classics to fruity refreshers. Pick a category to see everything we serve.</p>
+      </div>
+    </div>
+    <div class="hm-cats">
+      <a href="../menu/menu.html#milk-tea" class="hm-cat">
+        <span class="hm-cat-ico"><svg viewBox="0 0 24 24"><use href="#i-cup"/></svg></span>
+        <h3>Milk Tea</h3>
+        <p>Creamy, tea-forward drinks made with fresh milk or your choice of plant milk.</p>
+        <small>Classic, brown sugar, taro, matcha</small>
+      </a>
+      <a href="../menu/menu.html#fruit-tea" class="hm-cat">
+        <span class="hm-cat-ico"><svg viewBox="0 0 24 24"><use href="#i-drop"/></svg></span>
+        <h3>Fruit Tea</h3>
+        <p>Bright, juicy teas shaken with real fruit and served over plenty of ice.</p>
+        <small>Mango, passionfruit, lychee, strawberry</small>
+      </a>
+      <a href="../menu/menu.html#smoothies" class="hm-cat">
+        <span class="hm-cat-ico"><svg viewBox="0 0 24 24"><use href="#i-blend"/></svg></span>
+        <h3>Smoothies</h3>
+        <p>Thick, icy blends made for hot afternoons. No tea base, so naturally caffeine-free.</p>
+        <small>Mango, honeydew, avocado, coconut</small>
+      </a>
+      <a href="../menu/menu.html#toppings" class="hm-cat">
+        <span class="hm-cat-ico"><svg viewBox="0 0 24 24"><use href="#i-dots"/></svg></span>
+        <h3>Toppings</h3>
+        <p>Pearls, jellies, foams and puddings. Add one or stack a few on any drink.</p>
+        <small>15 toppings across four types</small>
+      </a>
+    </div>
+  </div>
+</section>
+
+
+<section class="hm-section" id="customize">
+  <div class="wrap">
+    <div class="hm-split">
+      <div class="hm-split-img"><img src="images/home-customize-your-drink.jpg" alt="Tapioca pearls being added to a bubble tea cup" loading="lazy"></div>
+      <div>
+        <h2>Make it yours in three steps</h2>
+        <p class="lead">Every drink on our menu is a starting point. Change anything you like and we will make it fresh to your order.</p>
+        <ol class="hm-steps">
+          <li><div><h3>Pick your tea</h3><p>Milk tea, fruit tea, matcha or a smoothie base. Start with what you love.</p></div></li>
+          <li><div><h3>Set sweetness and ice</h3><p>From zero sugar to extra sweet, with ice levels to match.</p></div></li>
+          <li><div><h3>Add your toppings</h3><p>Pearls, jelly, cheese foam, pudding. Choose one or stack several.</p></div></li>
+        </ol>
+        <a href="../customize/customize.html" class="btn btn-primary">Start customizing</a>
+      </div>
+    </div>
+
+    <div class="hm-options" aria-label="Customization options">
+      <div class="hm-opt">
+        <h3><svg viewBox="0 0 24 24"><use href="#i-leaf"/></svg>Tea base</h3>
+        <ul class="hm-chiplist"><li>Black</li><li>Jasmine green</li><li>Oolong</li><li>Matcha</li><li>No tea</li></ul>
+      </div>
+      <div class="hm-opt">
+        <h3><svg viewBox="0 0 24 24"><use href="#i-drop"/></svg>Sweetness</h3>
+        <ul class="hm-chiplist"><li>0%</li><li>25%</li><li>50%</li><li>75%</li><li>100%</li></ul>
+      </div>
+      <div class="hm-opt">
+        <h3><svg viewBox="0 0 24 24"><use href="#i-snow"/></svg>Ice</h3>
+        <ul class="hm-chiplist"><li>Regular</li><li>Less</li><li>No ice</li><li>Served warm</li></ul>
+      </div>
+      <div class="hm-opt">
+        <h3><svg viewBox="0 0 24 24"><use href="#i-milk"/></svg>Milk</h3>
+        <ul class="hm-chiplist"><li>Fresh milk</li><li>Oat</li><li>Soy</li><li>Non-dairy creamer</li></ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<section class="hm-section hm-alt" id="toppings">
+  <div class="wrap">
+    <div class="hm-head">
+      <div>
+        <h2>The topping bar</h2>
+        <p>Fifteen toppings in four groups. Mix and match as many as you like.</p>
+      </div>
+    </div>
+    <div class="hm-toppings">
+      <div class="hm-tgroup">
+        <h3>Pearls and boba</h3>
+        <p>Chewy or bursting, the heart of bubble tea.</p>
+        <ul><li>Tapioca pearls</li><li>Mini pearls</li><li>Popping boba</li><li>Crystal boba</li></ul>
+      </div>
+      <div class="hm-tgroup">
+        <h3>Jellies</h3>
+        <p>Light, refreshing and great in fruit teas.</p>
+        <ul><li>Fruit jelly</li><li>Lychee jelly</li><li>Grass jelly</li><li>Coconut jelly</li><li>Aloe vera</li></ul>
+      </div>
+      <div class="hm-tgroup">
+        <h3>Creamy toppings</h3>
+        <p>Rich and silky, served on top or mixed in.</p>
+        <ul><li>Cheese foam</li><li>Matcha foam</li><li>Egg pudding</li></ul>
+      </div>
+      <div class="hm-tgroup">
+        <h3>Sweet extras</h3>
+        <p>For a little more texture and sweetness.</p>
+        <ul><li>Red bean</li><li>Oreo crumble</li><li>Brown sugar syrup</li></ul>
+      </div>
+    </div>
+    <div class="hm-more"><a href="../menu/menu.html#toppings" class="btn btn-outline">See topping details</a></div>
+  </div>
+</section>
+
+
+<section class="hm-section">
+  <div class="wrap hm-split rev">
+    <div class="hm-split-img"><img src="images/home-taiwan-night-market.jpg" alt="A bubble tea stall in a Taiwan night market" loading="lazy"></div>
+    <div>
+      <h2>Born in the night markets, made for your neighbourhood</h2>
+      <p class="lead">Bubble tea started in the lively night markets of Taiwan. That playful, share-with-everyone spirit is what we bring to every cup, with a focus on doing the basics well.</p>
+      <ul class="hm-points">
+        <li><svg viewBox="0 0 24 24"><use href="#i-check"/></svg><span><b>Small-batch tea.</b> Brewed through the day, never from concentrate.</span></li>
+        <li><svg viewBox="0 0 24 24"><use href="#i-check"/></svg><span><b>Pearls cooked in-store.</b> Soft, chewy and still warm when they reach your cup.</span></li>
+        <li><svg viewBox="0 0 24 24"><use href="#i-check"/></svg><span><b>Real fruit.</b> Fruit teas and smoothies are made with fruit, not flavour syrups alone.</span></li>
+        <li><svg viewBox="0 0 24 24"><use href="#i-check"/></svg><span><b>A welcoming space.</b> Come for the drink, stay for the good company.</span></li>
+      </ul>
+      <a href="../about/about.html" class="btn btn-outline">Read our story</a>
+    </div>
+  </div>
+</section>
+
+
+<section class="hm-section hm-alt">
+  <div class="wrap hm-split">
+    <div class="hm-split-img"><img src="images/home-group-orders.jpg" alt="Bubble tea cups packed in carriers for a group order" loading="lazy"></div>
+    <div>
+      <h2>Group orders and celebrations, sorted</h2>
+      <p class="lead">Birthdays, office treats or a post-exam reward. We prepare your drinks ahead so everyone gets their favourite, fresh and on time.</p>
+      <ol class="hm-steps">
+        <li><div><h3>Send us the details</h3><p>Use the Contact page to share the date, pickup time and number of cups.</p></div></li>
+        <li><div><h3>Choose for everyone</h3><p>Custom sweetness, milks and toppings for each cup, with a note on any allergies.</p></div></li>
+        <li><div><h3>Pick up and enjoy</h3><p>Drinks are packed in carriers and ready when you walk in.</p></div></li>
+      </ol>
+      <a href="../contact/contact.html" class="btn btn-primary">Plan a group order</a>
+    </div>
+  </div>
+</section>
+
+
+<section class="hm-section">
+  <div class="wrap">
+    <div class="hm-head">
+      <div>
+        <h2>What our regulars say</h2>
+        <p>Honest words from the people who order from us every week.</p>
+      </div>
+    </div>
+    <div class="hm-reviews">
+      <figure class="hm-review"><div class="hm-stars" aria-label="5 out of 5 stars">★★★★★</div><blockquote>The taro pearl milk tea is unreal. Creamy, not too sweet, and the pearls are always perfectly chewy. My go-to every Saturday.</blockquote><figcaption class="hm-who"><span class="hm-avatar">A</span><span><b>Aanya R.</b><span>Weekend regular</span></span></figcaption></figure>
+      <figure class="hm-review"><div class="hm-stars" aria-label="5 out of 5 stars">★★★★★</div><blockquote>I love building my own drink. Less ice, 50% sugar, cheese foam on top. They get it right every single time.</blockquote><figcaption class="hm-who"><span class="hm-avatar">D</span><span><b>Daniel K.</b><span>Customizes every order</span></span></figcaption></figure>
+      <figure class="hm-review"><div class="hm-stars" aria-label="5 out of 5 stars">★★★★★</div><blockquote>We do group orders for the team and everyone finds something they love. Quick, friendly and always fresh.</blockquote><figcaption class="hm-who"><span class="hm-avatar">M</span><span><b>Meera S.</b><span>Orders for the whole office</span></span></figcaption></figure>
+      <figure class="hm-review"><div class="hm-stars" aria-label="5 out of 5 stars">★★★★★</div><blockquote>Finally a place with proper oat milk options and a real 0% sugar. The jasmine green tea is clean and fragrant.</blockquote><figcaption class="hm-who"><span class="hm-avatar">S</span><span><b>Sana T.</b><span>Low-sugar fan</span></span></figcaption></figure>
+      <figure class="hm-review"><div class="hm-stars" aria-label="5 out of 5 stars">★★★★★</div><blockquote>The honeydew fresh is perfect after a long afternoon. You can tell the fruit is real and the staff are always smiling.</blockquote><figcaption class="hm-who"><span class="hm-avatar">R</span><span><b>Rohan P.</b><span>After-class visitor</span></span></figcaption></figure>
+      <figure class="hm-review"><div class="hm-stars" aria-label="5 out of 5 stars">★★★★★</div><blockquote>Ordered ahead for my daughter's birthday. Twelve drinks, all different, all ready on time and labelled with names.</blockquote><figcaption class="hm-who"><span class="hm-avatar">N</span><span><b>Neha V.</b><span>Birthday host</span></span></figcaption></figure>
+    </div>
+  </div>
+</section>
+
+
+<section class="hm-section hm-visit-section">
+  <div class="wrap">
+    <div class="hm-visit">
+      <div class="hm-visit-copy">
+        <h2>Find your nearest BobaBliss</h2>
+        <p>Pop in any day of the week. Your next favourite cup is waiting.</p>
+        <ul class="hm-visit-info">
+          <li><svg viewBox="0 0 24 24"><use href="#i-pin"/></svg><span>Road No. 12, Banjara Hills, Hyderabad 500034</span></li>
+          <li><svg viewBox="0 0 24 24"><use href="#i-clock"/></svg><span>Daily 11:00 – 22:00</span></li>
+          <li><svg viewBox="0 0 24 24"><use href="#i-phone"/></svg><span>+91 00000 00001</span></li>
+        </ul>
+        <a href="../contact/contact.html#stores" class="btn btn-primary">Find a store</a>
+      </div>
+      <div class="hm-visit-img"><img src="images/home-find-a-store.jpg" alt="A blush-pink bubble tea café storefront" loading="lazy"></div>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<footer class="site">
+  <div class="wrap footer-grid">
+    <div class="footer-brand">
+      <a href="../home/index.html" class="brand">
+      <span class="brand-logo"><img src="logo.svg" alt="BobaBliss logo" width="46" height="46"></span>
+      <span class="brand-text">
+        <span class="logo-word">Boba<em>Bliss</em></span><br>
+        <span class="brand-sub">Bubble Tea &amp; Boba Shop</span>
+      </span>
+    </a>
+      <p class="footer-desc">Fresh-brewed tea, chewy pearls and flavours made to be shared. Build your perfect cup, your way.</p>
+      <div class="socials">
+        <a href="#" aria-label="Instagram"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="3.5" y="3.5" width="17" height="17" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17" cy="7" r=".8" fill="currentColor" stroke="none"/></svg></a>
+        <a href="#" aria-label="Facebook"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M14 8h3V4h-3a4 4 0 00-4 4v2H7v4h3v7h4v-7h3l1-4h-4V8z"/></svg></a>
+        <a href="#" aria-label="TikTok"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M14 3v11.5a3.5 3.5 0 11-3.5-3.5M14 3c.4 2.6 2 4.2 5 4.5"/></svg></a>
+      </div>
+    </div>
+
+    <div class="footer-col"><h4>Quick links</h4><ul><li><a href="../home/index.html">Home</a></li><li><a href="../home2/home-2.html">Home 2</a></li><li><a href="../about/about.html">About Us</a></li><li><a href="../menu/menu.html">Menu</a></li><li><a href="../contact/contact.html">Contact</a></li></ul></div>
+
+    <div class="footer-col"><h4>Menu</h4><ul><li><a href="../menu/menu.html#milk-tea">Milk Tea</a></li><li><a href="../menu/menu.html#fruit-tea">Fruit Tea</a></li><li><a href="../menu/menu.html#smoothies">Slushes</a></li><li><a href="../menu/menu.html#signature">Signature</a></li><li><a href="../menu/menu.html#toppings">Toppings</a></li></ul></div>
+
+    <div class="footer-col">
+      <h4>Customize</h4>
+      <ul>
+        <li><a href="../customize/customize.html#base">Choose your tea</a></li>
+        <li><a href="../customize/customize.html#sweetness">Sweetness &amp; ice</a></li>
+        <li><a href="../customize/customize.html#toppings">Pick toppings</a></li>
+      </ul>
+    </div>
+
+    <div class="footer-col">
+      <h4>Visit us</h4>
+      <ul>
+        <li class="contact-line"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21s7-6.2 7-11a7 7 0 10-14 0c0 4.8 7 11 7 11z"/><circle cx="12" cy="10" r="2.5"/></svg><span>Road No. 12, Banjara Hills, Hyderabad 500034</span></li>
+        <li class="contact-line"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg><span>Daily 11:00 – 22:00</span></li>
+        <li class="contact-line"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M5 4h4l2 5-2.5 1.5a11 11 0 005 5L15 13l5 2v4a2 2 0 01-2 2A16 16 0 013 6a2 2 0 012-2z"/></svg><span>+91 00000 00001</span></li>
+        <li><a href="../contact/contact.html#stores">Find a store</a></li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="wrap footer-bottom">
+    <p>© 2026 BobaBliss. All rights reserved.</p>
+    <div class="footer-bottom-links">
+      <a href="../additional/privacy.html">Privacy</a>
+      <a href="../additional/terms.html">Terms</a>
+    </div>
+  </div>
+</footer>
+
+
+</body>
+</html>
