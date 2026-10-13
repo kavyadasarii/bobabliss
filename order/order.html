@@ -172,6 +172,221 @@
 
 
 <script src="order.js">
+  (()=>{
+  const $=id=>document.getElementById(id);
+  const rs=n=>'₹'+n;
+  const slug=n=>n.toLowerCase().replace(/[^a-z0-9]+/g,'-').replace(/^-|-$/g,'');
+  const el=(t,c,x)=>{const e=document.createElement(t);if(c)e.className=c;if(x!=null)e.textContent=x;return e;};
+
+  const CATS={'milk-tea':'Boba Milk Tea','fruit-tea':'Fruit Tea & Popping Boba','smoothies':'Boba Slushes','signature':'Signature Boba'};
+  const DRINKS=[
+    ['milk-tea','Classic Pearl Milk Tea',150,180,'Strong-brewed black milk tea with warm, chewy tapioca pearls.'],
+    ['milk-tea','Brown Sugar Pearl Milk Tea',190,220,'Black milk tea swirled with warm brown-sugar syrup and fresh pearls.'],
+    ['milk-tea','Taro Pearl Milk Tea',200,230,'Velvety taro milk tea with chewy brown-sugar pearls.'],
+    ['milk-tea','Thai Pearl Milk Tea',170,200,'Spiced Thai tea, rich and creamy, with big tapioca pearls.'],
+    ['milk-tea','Oolong Pearl Milk Tea',170,200,'Roasted oolong with a toasty aroma, smooth milk and soft pearls.'],
+    ['milk-tea','Jasmine Pearl Milk Green',160,190,'Floral jasmine green tea softened with milk and mini pearls.'],
+    ['milk-tea','Hokkaido Pearl Milk Tea',190,220,'Creamy black tea with caramelised milk and brown-sugar pearls.'],
+    ['milk-tea','Honey Boba Milk Tea',170,200,'Black milk tea sweetened with wildflower honey and golden pearls.'],
+    ['milk-tea','Red Bean Boba Milk Tea',190,220,'Sweet red bean stirred into milk tea, finished with pearls.'],
+    ['milk-tea','Rose Pearl Milk Tea',180,210,'Fragrant rose petals steeped in black tea with milk and pearls.'],
+    ['milk-tea','Coconut Pearl Milk Tea',190,220,'Black tea over coconut milk with tender coconut jelly and pearls.'],
+    ['milk-tea','Earl Grey Pearl Milk Tea',170,200,'Bergamot-scented black milk tea, lightly sweet, with soft pearls.'],
+    ['fruit-tea','Mango Passionfruit Popping Tea',180,210,'Green tea shaken with ripe mango and tangy passionfruit popping boba.'],
+    ['fruit-tea','Strawberry Lychee Popping Tea',190,220,'Strawberry and lychee over light jasmine tea with lychee jelly and popping boba.'],
+    ['fruit-tea','Peach Oolong Crystal Boba',170,200,'Juicy white peach over floral oolong tea with chewy crystal boba.'],
+    ['fruit-tea','Passionfruit Pearl Green Tea',170,200,'Tart passionfruit pulp and seeds with fresh jasmine tea and pearls.'],
+    ['fruit-tea','Pink Grapefruit Jelly Tea',180,210,'Fresh pink grapefruit pulp, crisp green tea and aloe jelly.'],
+    ['fruit-tea','Kiwi Mint Popping Cooler',180,210,'Sliced kiwi, mint and green tea with kiwi popping boba.'],
+    ['fruit-tea','Watermelon Mint Pop',170,200,'Fresh watermelon and mint over light tea with watermelon popping boba.'],
+    ['fruit-tea','Blueberry Hibiscus Popping Cooler',190,220,'Tangy hibiscus tea with blueberry, a hint of lime and popping boba. Caffeine-free.'],
+    ['fruit-tea','Honey Lemon Aloe Tea',160,190,'Hand-squeezed lemon and wildflower honey over iced black tea with aloe.'],
+    ['fruit-tea','Pineapple Jasmine Popping Tea',170,200,'Sweet pineapple shaken with jasmine green tea and popping boba.'],
+    ['fruit-tea','Orange Sunrise Jelly Tea',170,200,'Fresh orange over light black tea with fruit jelly and pearls.'],
+    ['fruit-tea','Lychee Rose Popping Tea',180,210,'Lychee and rose over jasmine tea with lychee popping boba.'],
+    ['smoothies','Mango Pearl Slush',200,230,'Thick, icy mango blend with a swirl of coconut milk and tapioca pearls.'],
+    ['smoothies','Taro Pearl Slush',200,230,'Taro blended with milk and ice, topped with chewy pearls.'],
+    ['smoothies','Strawberry Popping Slush',200,230,'Strawberry ice blended smooth with strawberry popping boba.'],
+    ['smoothies','Coconut Cloud Slush',190,220,'Coconut milk, coconut jelly and crushed ice with mini pearls.'],
+    ['smoothies','Honeydew Pearl Slush',190,220,'Juicy honeydew melon, a hint of milk and soft pearls.'],
+    ['smoothies','Lychee Crystal Slush',190,220,'Sweet lychee ice with lychee jelly and crystal boba.'],
+    ['signature','Brown Sugar Tiger Milk',210,240,'Tiger stripes of brown-sugar syrup on cold milk with warm pearls.'],
+    ['signature','Cheese Foam Pearl Tea',200,230,'Black tea and pearls under a salted cream cap.'],
+    ['signature','Matcha Pearl Latte',190,220,'Stone-ground matcha shaken with milk, ice and fresh pearls.'],
+    ['signature','Strawberry Matcha Boba',210,240,'Strawberry purée layered under matcha milk with popping boba.'],
+    ['signature','Hojicha Pearl Milk Tea',200,230,'Roasted green tea with a gentle caramel note and brown-sugar pearls.'],
+    ['signature','Dirty Boba Milk',190,220,'Brown-sugar pearls pressed into the cup, topped with cold milk.']
+  ];
+  const TOPS=[
+    ['Pearls & boba',[['Tapioca pearls',30],['Brown sugar pearls',35],['Mini pearls',30],['Popping boba',40],['Crystal boba',40]]],
+    ['Jellies',[['Lychee jelly',30],['Grass jelly',30],['Coconut jelly',30],['Aloe vera',35]]],
+    ['Creamy',[['Cheese foam',50],['Matcha foam',55],['Egg pudding',45]]],
+    ['Chewy extras',[['Taro balls',40],['Red bean',35],['Brown sugar syrup',25]]]
+  ];
+  const SWEET=['0%','25%','50%','75%','100%'];
+  const ICE=['Regular','Less','No ice','Served warm'];
+  const MILK=['Standard','Fresh milk','Oat milk','Soy milk','Non-dairy creamer'];
+
+  
+  const sel=$('od-drink');
+  Object.keys(CATS).forEach(c=>{
+    const g=document.createElement('optgroup');g.label=CATS[c];
+    DRINKS.forEach((d,i)=>{ if(d[0]===c){const o=new Option(d[1],i);g.appendChild(o);} });
+    sel.appendChild(g);
+  });
+  const pills=(box,name,type,items,checked)=>{
+    items.forEach((it,i)=>{
+      const lab=el('label','od-pill'),inp=document.createElement('input');
+      inp.type=type;inp.name=name;inp.value=it.value;if(it.checked||(checked!=null&&i===checked))inp.checked=true;
+      const sp=el('span','',it.label);
+      if(it.extra){const em=el('em','',it.extra);sp.appendChild(em);}
+      lab.append(inp,sp);box.appendChild(lab);
+    });
+  };
+  pills($('od-sweet'),'sweet','radio',SWEET.map(s=>({value:s,label:s})),2);
+  pills($('od-ice'),'ice','radio',ICE.map(s=>({value:s,label:s})),0);
+  MILK.forEach(m=>$('od-milk').appendChild(new Option(m,m)));
+  TOPS.forEach(([g,list])=>{
+    const w=el('div','od-tgroup');w.appendChild(el('h4','',g));
+    const box=el('div','od-pills');
+    pills(box,'top','checkbox',list.map(([n,p])=>({value:n+'|'+p,label:n+' ',extra:'+'+rs(p)})));
+    w.appendChild(box);$('od-tops').appendChild(w);
+  });
+
+  
+  let qty=1,cart=[];
+  const form=$('od-form');
+  const cur=()=>{
+    const d=DRINKS[+sel.value];
+    const size=(form.querySelector('input[name=size]:checked')||{}).value||'M';
+    const tops=[...form.querySelectorAll('input[name=top]:checked')].map(i=>{const [n,p]=i.value.split('|');return {n,p:+p};});
+    const unit=(size==='M'?d[2]:d[3])+tops.reduce((s,t)=>s+t.p,0);
+    return {d,size,tops,unit,sweet:form.querySelector('input[name=sweet]:checked').value,ice:form.querySelector('input[name=ice]:checked').value,milk:$('od-milk').value};
+  };
+
+  const drawSizes=()=>{
+    const d=DRINKS[+sel.value],keep=(form.querySelector('input[name=size]:checked')||{}).value||'M';
+    $('od-size').textContent='';
+    pills($('od-size'),'size','radio',[
+      {value:'M',label:'Medium 500 ml ',extra:rs(d[2]),checked:keep==='M'},
+      {value:'L',label:'Large 700 ml ',extra:rs(d[3]),checked:keep==='L'}
+    ]);
+  };
+  const drawPreview=()=>{
+    const d=DRINKS[+sel.value];
+    const img=$('od-img');img.src='../menu/images/'+slug(d[1])+'.jpg';img.alt=d[1];
+    $('od-name').textContent=d[1];$('od-desc').textContent=d[4];
+  };
+  const drawLine=()=>{const c=cur();$('od-line').textContent=rs(c.unit*qty);};
+
+  
+  const total=()=>cart.reduce((s,i)=>s+i.unit*i.qty,0);
+  const fillItems=(box,items,actions)=>{
+    box.textContent='';
+    items.forEach((it,idx)=>{
+      const r=el('div','od-it');
+      r.appendChild(el('b','',it.qty+' × '+it.name));
+      r.appendChild(el('span','pr',rs(it.unit*it.qty)));
+      const meta=[it.note||null,(it.size==='M'?'Medium':'Large'),'Sweet '+it.sweet,it.ice,it.milk!=='Standard'?it.milk:null,it.tops.length?'+ '+it.tops.join(', '):null].filter(Boolean).join(' · ');
+      r.appendChild(el('span','meta',meta));
+      if(actions){
+        const a=el('span','acts'),b=el('button','','Remove');b.type='button';
+        b.addEventListener('click',()=>{cart.splice(idx,1);drawCart();});
+        a.appendChild(b);r.appendChild(a);
+      }
+      box.appendChild(r);
+    });
+  };
+  const drawCart=()=>{
+    const n=cart.reduce((s,i)=>s+i.qty,0),has=cart.length>0;
+    $('od-count').textContent=n+(n===1?' item':' items');
+    $('od-none').hidden=has;$('od-items').hidden=!has;$('od-totals').hidden=!has;
+    $('od-place').disabled=!has;
+    if(has){fillItems($('od-items'),cart,true);$('od-sub').textContent=$('od-tot').textContent=rs(total());}
+    if(has)$('od-formerr').hidden=true;
+  };
+
+  sel.addEventListener('change',()=>{drawSizes();drawPreview();drawLine();});
+  form.addEventListener('change',drawLine);
+  $('od-minus').addEventListener('click',()=>{qty=Math.max(1,qty-1);$('od-qty').textContent=qty;drawLine();});
+  $('od-plus').addEventListener('click',()=>{qty=Math.min(20,qty+1);$('od-qty').textContent=qty;drawLine();});
+  $('od-add').addEventListener('click',()=>{
+    const c=cur();
+    cart.push({name:c.d[1],size:c.size,sweet:c.sweet,ice:c.ice,milk:c.milk,tops:c.tops.map(t=>t.n),unit:c.unit,qty});
+    form.querySelectorAll('input[name=top]').forEach(i=>i.checked=false);
+    qty=1;$('od-qty').textContent=1;drawLine();drawCart();
+    const b=$('od-add'),t=b.textContent;b.textContent='Added ✓';setTimeout(()=>b.textContent=t,1200);
+  });
+
+  
+  const pad=n=>String(n).padStart(2,'0');
+  const today=()=>{const d=new Date();return d.getFullYear()+'-'+pad(d.getMonth()+1)+'-'+pad(d.getDate());};
+  $('od-date').min=$('od-date').value=today();
+  form.querySelectorAll('input[name=when]').forEach(r=>r.addEventListener('change',()=>{
+    $('od-later').hidden=form.querySelector('input[name=when]:checked').value!=='later';
+  }));
+
+  
+  const flag=(inp,err,msg)=>{
+    $(err).textContent=msg||'';
+    if(msg)inp.setAttribute('aria-invalid','true');else inp.removeAttribute('aria-invalid');
+    return !msg;
+  };
+  ['od-nm','od-ph','od-time'].forEach(id=>$(id).addEventListener('input',()=>{$(id).removeAttribute('aria-invalid');$(id+'-e').textContent='';}));
+
+  form.addEventListener('submit',e=>{
+    e.preventDefault();
+    let ok=true,first=null;
+    const bad=(inp)=>{ok=false;if(!first)first=inp;};
+    const name=$('od-nm').value.trim(),phone=$('od-ph').value.replace(/[\s-]/g,'');
+    if(!flag($('od-nm'),'od-nm-e',name?'':'Please enter your name.'))bad($('od-nm'));
+    if(!flag($('od-ph'),'od-ph-e',/^\+?\d{10,14}$/.test(phone)?'':'Enter a valid phone number.'))bad($('od-ph'));
+    const later=form.querySelector('input[name=when]:checked').value==='later';
+    let whenText='As soon as possible (about 15 minutes)';
+    if(later){
+      const dt=$('od-date').value,tm=$('od-time').value;let msg='';
+      if(!dt||!tm)msg='Choose a date and time.';
+      else if(tm<'11:00'||tm>'21:30')msg='We are open 11:00 – 22:00; pick up to 21:30.';
+      else if(new Date(dt+'T'+tm)<new Date(Date.now()+15*60000))msg='Pick a time at least 15 minutes from now.';
+      if(!flag($('od-time'),'od-time-e',msg))bad($('od-time'));
+      else whenText=new Date(dt+'T'+tm).toLocaleString('en-IN',{weekday:'short',day:'numeric',month:'short',hour:'numeric',minute:'2-digit'});
+    }
+    const fe=$('od-formerr');
+    if(!cart.length){fe.textContent='Add at least one drink to your order.';fe.hidden=false;ok=false;}
+    if(!ok){if(first)first.focus();return;}
+    fe.hidden=true;
+
+    const code='BB-'+String(Math.floor(1000+Math.random()*9000));
+    $('d-name').textContent=name.split(' ')[0];
+    $('d-code').textContent='Order '+code;
+    fillItems($('d-items'),cart,false);
+    $('d-total').textContent=rs(total());
+    $('d-when').textContent=whenText;
+    $('d-pay').textContent=form.querySelector('input[name=pay]:checked').value;
+    $('od-layout').hidden=true;$('od-done').hidden=false;
+    window.scrollTo({top:0,behavior:'smooth'});
+  });
+  $('d-new').addEventListener('click',()=>{
+    cart=[];form.reset();$('od-date').value=today();$('od-later').hidden=true;
+    drawSizes();drawPreview();drawLine();drawCart();
+    $('od-done').hidden=true;$('od-layout').hidden=false;
+    window.scrollTo({top:0,behavior:'smooth'});
+  });
+
+  
+  const want=new URLSearchParams(location.search).get('drink');
+  if(want){const i=DRINKS.findIndex(d=>slug(d[1])===want);if(i>-1)sel.value=i;}
+  
+  try{
+    const raw=sessionStorage.getItem('boba-custom');
+    if(raw){
+      sessionStorage.removeItem('boba-custom');
+      const c=JSON.parse(raw);
+      if(c&&c.name&&c.unit>0)cart.push({name:String(c.name),size:c.size==='L'?'L':'M',sweet:String(c.sweet),ice:String(c.ice),milk:String(c.milk),tops:(c.tops||[]).map(String),note:String(c.note||''),unit:+c.unit,qty:Math.max(1,Math.min(20,+c.qty||1))});
+    }
+  }catch(e){}
+  drawSizes();drawPreview();drawLine();drawCart();
+})();
 </script>
 </body>
 </html>
