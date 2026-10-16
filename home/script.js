@@ -1,10 +1,3 @@
-/* ==========================================================
-   Shared site script — dark/light theme, RTL/LTR, nav dropdown
-   (touch-friendly) and mobile menu.
-   Load in <head> WITHOUT defer so the saved theme/direction
-   are applied before first paint (no flash).
-   Reusing on another site? Change STORAGE_PREFIX only.
-   ========================================================== */
 (() => {
   const STORAGE_PREFIX = 'boba';                       // -> boba-theme, boba-dir
   const root = document.documentElement;

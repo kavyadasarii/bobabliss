@@ -1,7 +1,3 @@
-/* Customize page — one script.
-   1) Drink builder (steps, live cup preview, summary, presets, order)
-   2) Hero card (tabs + sweetness preview) */
-
 
 (() => {
   const rs = (n) => '₹' + n;
